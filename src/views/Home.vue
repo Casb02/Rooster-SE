@@ -9,7 +9,9 @@ import Input from "../components/UI/Input.vue";
     <Header>
       <Button>test</Button>
     </Header>
-    <Input placeholder="test" type="ssss">Name</Input>
+      <Input placeholder="test" type="ssss" style="width: 100px">Name</Input>
+
+
 
   </div>
 
