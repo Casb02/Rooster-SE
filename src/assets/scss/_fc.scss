@@ -1,0 +1,22 @@
+.fc {
+  .fc-button-primary {
+    @apply inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700;
+  }
+  .fc-today-button {
+    @apply inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700;
+    //if has disabled
+    &[disabled] {
+      opacity: unset;
+      border: unset;
+      @apply cursor-not-allowed opacity-1000 bg-indigo-900;
+    }
+  }
+
+  .fc-day-today {
+    background-color: #E0E7FF !important;
+  }
+  .fc-col-header-cell.fc-day-today {
+    background-color: #A5B4FC !important;
+    color: #000 !important;
+  }
+}

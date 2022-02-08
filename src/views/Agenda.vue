@@ -1,10 +1,11 @@
 <script setup>
-import Calendar from '../components/UI/Calendar.vue';
+import Calendar from '../components/UI/cal/Calendar.vue';
 
 </script>
 
 <template>
   <div class="container mx-auto">
+    <h1>Kalender</h1>
     <Calendar></Calendar>
   </div>
 
