@@ -1,6 +1,25 @@
 {
-  "name": "roosterse",
-  "version": "0.0.0",
+  "name": "rooster_saxion",
+  "version": "1.0.0",
+  "description": "Rooster app in vue voor de lol",
+  "author": {
+    "name": "Cas Boomkamp",
+    "email": "casb0002@gmail.com",
+    "url": "https://github.com/Casb02"
+  },
+  "contributors": [
+    {
+      "name": "Cas Boomkamp",
+      "email": "casb0002@gmail.com",
+      "url": "https://github.com/Casb02",
+      "role": "Frontend Developer"
+    },
+    {
+      "name": "Pim Meulenkamp",
+      "url": "https://github.com/Pimmeul",
+      "role": "Backend Developer"
+    }
+  ],
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -14,7 +33,6 @@
     "@fullcalendar/vue3": "^5.10.1",
     "@headlessui/vue": "^1.4.3",
     "@heroicons/vue": "^1.0.5",
-    "@tailwindcss/forms": "^0.4.0",
     "sass": "^1.49.7",
     "vue": "^3.2.25",
     "vue-router": "^4.0.12",
