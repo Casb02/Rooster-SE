@@ -1,5 +1,5 @@
 <script setup>
-import Calendar from '../components/UI/cal/Calendar.vue';
+import Calendar from '../components/UI/Calendar.vue';
 
 </script>
 
