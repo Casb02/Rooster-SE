@@ -77,3 +77,4 @@ typings/
 
 #OSX
 .DS_Store
+/.idea/watcherTasks.xml
