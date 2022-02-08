@@ -1,6 +1,5 @@
 <script setup>
 import Header from "../components/Home/Header.vue";
-import Btn from "../components/UI/Button.vue";
 import Button from "../components/UI/Button.vue";
 import Input from "../components/UI/Input.vue";
 </script>

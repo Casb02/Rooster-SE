@@ -13,12 +13,12 @@ import MobileItem from "./components/Layout/navbar/MobileItem.vue";
   <Navbar>
     <template #nav-items>
       <NavItem to="/" :active="true">Home</NavItem>
-      <NavItem to="/">Test</NavItem>
-      <NavItem to="/">123</NavItem>
+      <NavItem to="/agenda">Agenda</NavItem>
     </template>
 
     <template #mobile-items>
-      <MobileItem to="/" :active="true">Done</MobileItem>
+      <MobileItem to="/" :active="true">Home</MobileItem>
+      <MobileItem to="/agenda" >Agenda</MobileItem>
     </template>
 
     <template #profile>
