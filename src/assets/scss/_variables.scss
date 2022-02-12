@@ -11,7 +11,7 @@ $black: #000;
 $white: #fff;
 $transparent: rgba(255, 255, 255, 0);
 
-
+//Define custom boostrap colors
 $primary: $brand-1;
 $secondary: $brand-2;
 $success: #28a745;
@@ -20,6 +20,7 @@ $warning: $yellow;
 $danger: $red;
 $light: $gray-100;
 $dark: $gray-900;
+
 //Map the theme color for class usage
 $theme-colors: (
   'black': $black,
@@ -38,3 +39,16 @@ $theme-colors: (
   'brand-4': $brand-4,
   'transparent': $transparent,
 );
+
+//Custom card style
+$card-border-color: transparent;
+$card-border-radius: 0;
+$card-cap-bg: $brand-2;
+$card-cap-color: $white;
+$card-bg: $brand-4;
+
+  //Fixes issue in bootstrap 5 not compiling bg-* and text-* utilities
+$theme-colors-rgb: map-loop($theme-colors, to-rgb, "$value");
+$utilities-colors: map-merge($theme-colors, $utilities-colors);
+$utilities-text-colors: map-loop($utilities-colors, rgba-css-var, "$key", "text");
+$utilities-bg-colors: map-loop($utilities-colors, rgba-css-var, "$key", "bg");
