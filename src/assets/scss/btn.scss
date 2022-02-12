@@ -1,0 +1,20 @@
+@import "variables";
+
+.btn-brand-1, .btn-primary {
+  color: $white;
+  &:hover {
+    background: darken($brand-1, 7%);
+    border-color: darken($brand-1, 5%);
+  }
+}
+
+.btn-brand-3 {
+  &:hover {
+    background: lighten($brand-3, 10%);
+    border-color: lighten($brand-3, 7%);
+  }
+}
+
+.btn-success {
+  color: $white;
+}

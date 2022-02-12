@@ -1,31 +1,16 @@
 <script setup>
 import Navbar from "./components/Layout/Navbar.vue";
-import NavItem from "./components/Layout/navbar/NavItem.vue";
-import ProfileItem from "./components/Layout/navbar/ProfileItem.vue";
-import MobileItem from "./components/Layout/navbar/MobileItem.vue";
 import Footer from "./components/Layout/Footer.vue";
+import NavLink from "./components/UI/Navigation/NavLink.vue";
 
 </script>
 
 <template>
   <div class="main-content">
-    <Navbar>
-      <template #nav-items>
-        <NavItem to="/">Home</NavItem>
-        <NavItem to="/agenda">Agenda</NavItem>
-      </template>
-
-      <template #mobile-items>
-        <MobileItem to="/">Home</MobileItem>
-        <MobileItem to="/agenda" >Agenda</MobileItem>
-      </template>
-
-      <template #profile>
-        <ProfileItem to="/">Jouw profiel</ProfileItem>
-        <ProfileItem to="/">Instellingen</ProfileItem>
-        <ProfileItem to="/">Log uit</ProfileItem>
-      </template>
-    </Navbar>
+    <navbar brand-name="RoosterSE">
+      <nav-link to="/">Home</nav-link>
+      <nav-link to="/agenda">Agenda</nav-link>
+    </navbar>
 
     <router-view class="min"/>
     <Footer class="footer"/>

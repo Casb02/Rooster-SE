@@ -29,18 +29,14 @@
     "@fullcalendar/core": "^5.10.1",
     "@fullcalendar/daygrid": "^5.10.1",
     "@fullcalendar/timegrid": "^5.10.1",
-    "@fullcalendar/vue": "^5.10.1",
     "@fullcalendar/vue3": "^5.10.1",
-    "@headlessui/vue": "^1.4.3",
-    "@heroicons/vue": "^1.0.5",
+    "bootstrap": "^5.1.3",
     "sass": "^1.49.7",
     "vue": "^3.2.25",
-    "vue-router": "^4.0.12",
-    "windicss": "^3.4.3"
+    "vue-router": "^4.0.12"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^2.0.0",
-    "vite": "^2.7.2",
-    "vite-plugin-windicss": "^1.7.0"
+    "vite": "^2.7.2"
   }
 }

@@ -1,0 +1,40 @@
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+
+//define the base theme colors
+$brand-1: #51C4D3;
+$brand-2: #126E82;
+$brand-3: #132C33;
+$brand-4: #D8E3E7;
+$light: #D8E3E7;
+$black: #000;
+$white: #fff;
+$transparent: rgba(255, 255, 255, 0);
+
+
+$primary: $brand-1;
+$secondary: $brand-2;
+$success: #28a745;
+$info: $cyan;
+$warning: $yellow;
+$danger: $red;
+$light: $gray-100;
+$dark: $gray-900;
+//Map the theme color for class usage
+$theme-colors: (
+  'black': $black,
+  'white': $white,
+  'light': $light,
+  'primary': $primary,
+  'secondary': $secondary,
+  'success': $success,
+  'info': $info,
+  'warning': $warning,
+  'danger': $danger,
+  'dark': $dark,
+  'brand-1': $brand-1,
+  'brand-2': $brand-2,
+  'brand-3': $brand-3,
+  'brand-4': $brand-4,
+  'transparent': $transparent,
+);
