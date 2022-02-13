@@ -36,6 +36,10 @@ import NavLink from "./components/UI/Navigation/NavLink.vue";
 
   .site-view {
     flex-grow: 1;
+    @media (max-width: 992px) {
+      padding-top: 4rem;
+      padding-bottom: 4rem;
+    }
   }
 
 }
