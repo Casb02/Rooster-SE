@@ -2,6 +2,7 @@ import {createRouter, createWebHistory} from 'vue-router';
 import Home from '../views/Home.vue';
 import Agenda from '../views/Agenda.vue';
 import BsTest from '../views/BsTest.vue';
+import Login from '../views/Login.vue';
 
 const routes = [
     {
@@ -18,6 +19,11 @@ const routes = [
         path: '/bs-test',
         name: 'Bootstrap test',
         component: BsTest
+    },
+    {
+        path: '/login',
+        name: 'Login',
+        component: Login
     }
 ]
 

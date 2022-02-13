@@ -13,8 +13,8 @@ import NavLink from "./components/UI/Navigation/NavLink.vue";
         <nav-link to="/agenda">Agenda</nav-link>
         <nav-link to="/bs-test">Bootstrap Test</nav-link>
       </navbar>
+        <router-view class="site-view"/>
 
-      <router-view/>
     </div>
 
     <Footer class="footer"/>
@@ -30,7 +30,14 @@ import NavLink from "./components/UI/Navigation/NavLink.vue";
   flex-direction: column;
 }
 .main-content {
-  margin-bottom: 5rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+
+  .site-view {
+    flex-grow: 1;
+  }
+
 }
 
 .footer {

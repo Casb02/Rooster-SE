@@ -6,6 +6,9 @@
     background: darken($brand-1, 7%);
     border-color: darken($brand-1, 5%);
   }
+  &.active, &:active {
+    color: $white;
+  }
 }
 
 .btn-brand-3 {
