@@ -2,12 +2,19 @@
 import Navbar from "./components/Layout/Navbar.vue";
 import Footer from "./components/Layout/Footer.vue";
 import NavLink from "./components/UI/Navigation/NavLink.vue";
+import {ref} from "vue";
+
+let hideDev = ref(false);
 
 </script>
 
 <template>
   <div class="site-content">
     <div class="main-content">
+      <div v-if="!hideDev" class="dev-banner">
+      <span>Development mode</span>
+      <span @click="hideDev = true" class="ms-2">❌</span>
+      </div>
       <navbar brand-name="RoosterSE">
         <nav-link to="/">Home</nav-link>
         <nav-link to="/agenda">Agenda</nav-link>
@@ -24,6 +31,18 @@ import NavLink from "./components/UI/Navigation/NavLink.vue";
 
 <style lang="scss">
 
+.dev-banner {
+  background: #900303;
+  height: 30px;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .site-content {
   min-height: 100vh;
   display: flex;
@@ -36,12 +55,12 @@ import NavLink from "./components/UI/Navigation/NavLink.vue";
 
   .site-view {
     flex-grow: 1;
+    padding-top: 1rem;
     @media (max-width: 992px) {
-      padding-top: 4rem;
-      padding-bottom: 4rem;
+      padding-top: 2rem;
     }
+    padding-bottom: 4rem;
   }
-
 }
 
 .footer {

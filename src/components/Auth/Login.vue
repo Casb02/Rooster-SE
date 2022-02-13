@@ -20,17 +20,22 @@
             <input type="checkbox" class="form-check-input" id="safeInfo">
             <label class="form-check-label" for="safeInfo">Onthoud mij</label>
           </div>
+          <div class="mb-3">
+            <span class="tz-small">Nog geen account? <router-link to="/register">Registreer</router-link> een account.</span>
+          </div>
           <button type="submit" class="btn btn-primary">Inloggen</button>
         </form>
       </div>
     </div>
   </div>
-
 </template>
 
 <style scoped lang="scss">
 .login-form {
   max-width: 22rem;
   margin: 0 auto;
+}
+.tz-small {
+  font-size: 0.7rem;
 }
 </style>
