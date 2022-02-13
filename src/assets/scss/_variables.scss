@@ -1,6 +1,14 @@
 @import "node_modules/bootstrap/scss/functions";
 @import "node_modules/bootstrap/scss/variables";
 
+//import fonts
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600&display=swap');
+
+$poppins: 'Poppins', sans-serif;
+
+//Replace bootstraps font
+$font-family-sans-serif: $poppins;
+
 //define the base theme colors
 $brand-1: #51C4D3;
 $brand-2: #126E82;
@@ -39,6 +47,10 @@ $theme-colors: (
   'brand-4': $brand-4,
   'transparent': $transparent,
 );
+
+//Text opmaak
+$link-color: $brand-2;
+$link-hover-color: darken($brand-2, 10%);
 
 //Custom card style
 $card-border-color: transparent;
