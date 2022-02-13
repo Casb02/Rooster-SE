@@ -21,7 +21,7 @@
 
             <h6>Backend Developer</h6>
             <div class="footer-item">
-              <a href="https://github.com/Pimeul">Pim Meulenkamp</a>
+              <a href="https://github.com/Pimmeul">Pim Meulenkamp</a>
             </div>
 
             <h6 class="footer-subheader mt-4">Frontend Developer</h6>
