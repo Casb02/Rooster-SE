@@ -28,7 +28,6 @@ const selectedClass = ref("");
             <div class="mb-3">
               <label for="passwordInput" class="form-label">Wachtwoord</label>
               <input type="password" class="form-control" id="passwordInput" v-model="userPass">
-              <p>{{userPassCheck}}</p>
             </div>
             <div class="mb-3">
               <label for="password2Input" class="form-label">Herhaal wachtwoord</label>
