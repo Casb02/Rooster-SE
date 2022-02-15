@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import Register from '../../components/auth/Register.vue'
 import CardCenter from "../../components/ui/elements/CardCenter.vue";
 </script>

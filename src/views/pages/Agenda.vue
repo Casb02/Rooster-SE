@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import Calendar from '../../components/ui/calendar/Calendar.vue'
 
 </script>

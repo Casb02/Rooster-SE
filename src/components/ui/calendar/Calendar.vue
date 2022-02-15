@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import '@fullcalendar/core/vdom'; // solves problem with Vite
 import FullCalendar from '@fullcalendar/vue3';
 import timeGridPlugin from '@fullcalendar/timegrid';

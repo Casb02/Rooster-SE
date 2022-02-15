@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import ResetPassword from "../../components/auth/ResetPassword.vue";
 import CardCenter from "../../components/ui/elements/CardCenter.vue";
 

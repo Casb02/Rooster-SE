@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import Login from '../../components/auth/Login.vue';
 import CardCenter from "../../components/ui/elements/CardCenter.vue";
 </script>

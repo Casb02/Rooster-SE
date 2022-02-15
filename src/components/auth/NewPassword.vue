@@ -1,7 +1,7 @@
-<script setup>
+<script setup lang="ts">
 import {ref} from "vue";
-const newPassword = ref("");
-const newPasswordRepeat = ref("");
+const newPassword = ref<HTMLElement | null>(null);
+const newPasswordRepeat = ref<HTMLElement | null>(null);
 </script>
 
 <template>

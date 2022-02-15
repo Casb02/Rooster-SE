@@ -1,16 +1,16 @@
-<script setup>
+<script setup lang="ts">
 
-import {ref} from "vue";
+import {Ref, ref} from "vue";
 
 //Class list from API
-const classList = ref(["EHI1v.SA", "EHI1v.SB", "EHI1v.SC","EHI1v.SD","EHI1v.IA","EHI1v.IB","EHI1v.BA"]);
+let classList: Ref<Array<string>> = ref(["EHI1v.SA", "EHI1v.SB", "EHI1v.SC","EHI1v.SD","EHI1v.IA","EHI1v.IB","EHI1v.BA"]);
 
 //User inputs
-const userEmail = ref("");
-const userPass = ref("");
-const username = ref("");
-const userPassCheck = ref("");
-const selectedClass = ref("");
+const userEmail = ref<HTMLElement | null>(null);
+const userPass = ref<HTMLElement | null>(null);
+const username = ref<HTMLElement | null>(null);
+const userPassCheck = ref<HTMLElement | null>(null);
+const selectedClass = ref<HTMLElement | null>(null);
 
 
 </script>
