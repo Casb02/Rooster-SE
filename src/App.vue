@@ -1,7 +1,7 @@
 <script setup>
-import Navbar from "./components/Layout/Navbar.vue";
-import Footer from "./components/Layout/Footer.vue";
-import NavLink from "./components/UI/Navigation/NavLink.vue";
+import Navbar from "./components/layout/Navbar.vue";
+import Footer from "./components/layout/Footer.vue";
+import NavLink from "./components/ui/navigation/NavLink.vue";
 import {ref} from "vue";
 
 let hideDev = ref(false);
@@ -18,7 +18,6 @@ let hideDev = ref(false);
       <navbar brand-name="RoosterSE">
         <nav-link to="/">Home</nav-link>
         <nav-link to="/agenda">Agenda</nav-link>
-        <nav-link to="/bs-test">Bootstrap Test</nav-link>
       </navbar>
         <router-view class="site-view"/>
 
@@ -56,6 +55,7 @@ let hideDev = ref(false);
   .site-view {
     flex-grow: 1;
     padding-top: 1rem;
+    min-height: 50vh;
     @media (max-width: 992px) {
       padding-top: 2rem;
     }
