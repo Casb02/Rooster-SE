@@ -19,6 +19,7 @@ const password = ref('');
           <div class="mb-3">
             <label for="passwordInput" class="form-label">Wachtwoord</label>
             <input type="password" class="form-control" id="passwordInput">
+            <span class="tz-small">Wachtwoord vergeten? <router-link to="/auth/reset-password">Reset je wachtwoord</router-link>.</span>
           </div>
           <div class="mb-3 form-check">
             <input type="checkbox" class="form-check-input" id="safeInfo">
