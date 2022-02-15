@@ -14,11 +14,11 @@ const password = ref('');
         <form>
           <div class="mb-3">
             <label for="emailInput" class="form-label">Email address</label>
-            <input type="email" class="form-control" id="emailInput">
+            <input type="email" class="form-control" id="emailInput" v-model="email">
           </div>
           <div class="mb-3">
             <label for="passwordInput" class="form-label">Wachtwoord</label>
-            <input type="password" class="form-control" id="passwordInput">
+            <input type="password" class="form-control" id="passwordInput" v-model="password">
             <span class="tz-small">Wachtwoord vergeten? <router-link to="/auth/reset-password">Reset je wachtwoord</router-link>.</span>
           </div>
           <div class="mb-3 form-check">

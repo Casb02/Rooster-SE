@@ -5,7 +5,7 @@ import BsTestView from '../views/pages/BsTest.vue';
 import LoginView from '../views/auth/Login.vue';
 import RegisterView from '../views/auth/Register.vue';
 import ResetView from '../views/auth/Reset.vue';
-//import NewPasswordView from '../views/auth/NewPassword.vue';
+import NewPasswordView from '../views/auth/NewPassword.vue';
 
 const routes = [
     {
@@ -34,9 +34,14 @@ const routes = [
         component: LoginView
     },
     {
-        path: '/reset-password',
+        path: '/auth/password/reset',
         name: 'Vraag een nieuw wachtwoord aan.',
         component: ResetView
+    },
+    {
+        path: '/auth/password/new',
+        name: 'Maak een nieuw wachtwoord aan.',
+        component: NewPasswordView
     }
 ]
 
