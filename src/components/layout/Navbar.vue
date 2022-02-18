@@ -21,6 +21,7 @@ defineProps({
           <slot></slot>
         </ul>
         <router-link to="/login" class="btn btn-primary ms-auto">Login</router-link>
+        <span class="nav-link" @click="logout">Logout</span>
       </div>
     </div>
   </nav>

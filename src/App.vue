@@ -4,7 +4,7 @@ import Footer from "./components/layout/Footer.vue";
 import NavLink from "./components/ui/navigation/NavLink.vue";
 import {Ref, ref} from "vue";
 
-let hideDev: Ref<Boolean> = ref(false);
+let hideDev: Ref<boolean> = ref(false);
 
 </script>
 
@@ -15,10 +15,10 @@ let hideDev: Ref<Boolean> = ref(false);
       <span>Development mode</span>
       <span @click="hideDev = true" class="ms-2">❌</span>
       </div>
-      <navbar brand-name="RoosterSE">
+      <Navbar brand-name="RoosterSE">
         <nav-link to="/">Home</nav-link>
         <nav-link to="/agenda">Agenda</nav-link>
-      </navbar>
+      </Navbar>
         <router-view class="site-view"/>
 
     </div>

@@ -4,6 +4,8 @@ import {ref} from "vue";
 const email = ref<HTMLElement | null>(null);
 const password = ref<HTMLElement | null>(null);
 
+
+
 </script>
 
 <template>
@@ -11,7 +13,7 @@ const password = ref<HTMLElement | null>(null);
     <div class="card">
       <h4 class="card-header">Inloggen</h4>
       <div class="card-body">
-        <form>
+        <form @submit.prevent="login">
           <div class="mb-3">
             <label for="emailInput" class="form-label">Email address</label>
             <input type="email" class="form-control" id="emailInput" v-model="email">
