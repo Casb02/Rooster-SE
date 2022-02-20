@@ -18,6 +18,7 @@ let hideDev: Ref<boolean> = ref(false);
       <Navbar brand-name="RoosterSE">
         <nav-link to="/">Home</nav-link>
         <nav-link to="/agenda">Agenda</nav-link>
+        <nav-link to="/agenda" login-only="true">LoginOnly</nav-link>
       </Navbar>
         <router-view class="site-view"/>
 

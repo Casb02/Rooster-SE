@@ -1,7 +1,8 @@
-import { createApp } from 'vue'
-import App from './App.vue'
-import router from './router'
-import './assets/scss/main.scss'
+import { createApp } from 'vue';
+import { createPinia } from 'pinia';
+import App from './App.vue';
+import router from './router';
+import './assets/scss/main.scss';
 //Firebase config
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
@@ -20,11 +21,12 @@ const firebaseConfig = {
 };
 
 
-// Initialize Firebase
-const analyticsApp = initializeApp(firebaseConfig);
-const analytics = getAnalytics(analyticsApp);
-
+// Initialize Firebase Analytics
+// const analyticsApp = initializeApp(firebaseConfig);
+// const analytics = getAnalytics(analyticsApp);
+//
 
 const app = createApp(App);
+app.use(createPinia());
 app.use(router);
 app.mount('#app');

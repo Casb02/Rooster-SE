@@ -1,11 +1,11 @@
 import {createRouter, createWebHistory} from 'vue-router';
 import HomeView from '../views/pages/Home.vue';
 import AgendaView from '../views/pages/Agenda.vue';
-import BsTestView from '../views/pages/BsTest.vue';
 import LoginView from '../views/auth/Login.vue';
 import RegisterView from '../views/auth/Register.vue';
 import ResetView from '../views/auth/Reset.vue';
 import NewPasswordView from '../views/auth/NewPassword.vue';
+import DashboardView from '../views/account/Dashboard.vue';
 
 const routes = [
     {
@@ -19,29 +19,29 @@ const routes = [
         component: AgendaView
     },
     {
-        path: '/bs-test',
-        name: 'Bootstrap test page',
-        component: BsTestView
-    },
-    {
         path: '/register',
-        name: 'Registreer een account',
+        name: 'Registreer',
         component: RegisterView
     },
     {
         path: '/login',
-        name: 'Login op je account',
+        name: 'Login',
         component: LoginView
     },
     {
         path: '/auth/password/reset',
-        name: 'Vraag een nieuw wachtwoord aan.',
+        name: 'PasswordReset',
         component: ResetView
     },
     {
         path: '/auth/password/new',
-        name: 'Maak een nieuw wachtwoord aan.',
+        name: 'PasswordNew',
         component: NewPasswordView
+    },
+    {
+        path: '/account',
+        name: 'Dashboard',
+        component: DashboardView
     }
 ]
 
@@ -49,7 +49,7 @@ const router = createRouter({
     history: createWebHistory(),
     routes,
     linkActiveClass: "active",
-    linkExactActiveClass: "exact-active",
+    // linkExactActiveClass: "exact-active",
 });
 
 export default router;
