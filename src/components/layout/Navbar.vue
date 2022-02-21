@@ -13,7 +13,7 @@ const userStore = useUserStore();
 </script>
 
 <template>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <nav class="navbar navbar-expand-lg navbar-light bg-brand-4">
     <div class="container-fluid">
       <router-link class="navbar-brand" to="/">{{ brandName }}</router-link>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarApp" aria-controls="navbarApp" aria-expanded="false" aria-label="Toggle navigation">

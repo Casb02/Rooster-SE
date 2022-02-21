@@ -8,17 +8,6 @@
       <div class="container text-brand-4 mb-4">
         <div class="row">
           <div class="col-sm-6 col-lg-2">
-            <h4 class="mb-3 footer-header">Sitemap</h4>
-            <span class="footer-item">
-            <router-link to="/">Home</router-link> <br>
-            <router-link to="/agenda">Agenda</router-link> <br>
-            <router-link to="/login">Login</router-link> <br>
-            <router-link to="/register">Register</router-link> <br>
-            <router-link to="/pass">Forgot password</router-link> <br>
-            <router-link to="/bs-test">Componenten</router-link>
-          </span>
-          </div>
-          <div class="col-sm-6 col-lg-4 mt-5 mt-sm-0 mb-3 mb-lg-0">
             <h4 class="mb-3 footer-header">Over</h4>
 
             <h6>Backend Developer</h6>
@@ -32,6 +21,14 @@
             </div>
 
 
+          </div>
+          <div class="col-sm-6 col-lg-4 mt-5 mt-sm-0 mb-3 mb-lg-0 ">
+            <h4 class="mb-3 footer-header">Sitemap</h4>
+            <span class="footer-item">
+            <router-link to="/">Home</router-link> <br>
+            <router-link to="/login">Login</router-link> <br>
+            <router-link to="/register">Register</router-link> <br>
+          </span>
           </div>
         </div>
       </div>
