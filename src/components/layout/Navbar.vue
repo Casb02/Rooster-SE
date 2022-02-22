@@ -23,8 +23,10 @@ const userStore = useUserStore();
         <ul class="navbar-nav">
           <slot></slot>
         </ul>
-        <router-link to="/login" class="btn btn-primary ms-auto" v-show="!userStore.isLoggedIn">Login</router-link>
-        <span class="nav-link btn btn-link ms-auto" @click="userStore.logout()" v-show="userStore.isLoggedIn">Logout</span>
+        <ul class="navbar-nav ms-lg-auto">
+          <router-link to="/login" class="btn btn-primary ms-auto" v-show="!userStore.isLoggedIn">Login</router-link>
+          <span class="nav-link btn btn-link" @click="userStore.logout()" v-show="userStore.isLoggedIn">Logout</span>
+        </ul>
       </div>
     </div>
   </nav>

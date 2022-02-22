@@ -43,20 +43,10 @@ let userStore = useUserStore();
   display: flex;
   justify-content: center;
   align-items: center;
-  position: absolute;
   z-index: 100;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 70%;
-  height: 70px;
-  @include media-breakpoint-up(md) {
-    width: 60%;
-    height: 50px;
-  }
-  @include media-breakpoint-up(lg) {
-    width: 40%;
-    height: 40px;
-  }
+  width: 100%;
+  height: 50px;
+  margin-bottom: -15px;
 }
 
 .site-content {

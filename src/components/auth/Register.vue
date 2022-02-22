@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import {reactive, Ref, ref} from "vue";
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import router from "../../router";
 import {useUserStore} from "../../stores/user";
+import registerUser from "../../functions/firebase/registerUser";
 
 //Class list from API
 let classList: Ref<Array<string>> = ref(["EHI1v.SA", "EHI1v.SB", "EHI1v.SC","EHI1v.SD","EHI1v.IA","EHI1v.IB","EHI1v.BA"]);
@@ -66,25 +66,16 @@ const validate = () => {
   return !hasError;
 }
 
-
-const register = () => {
-  const auth = getAuth();
-  createUserWithEmailAndPassword(auth, registration.email, registration.password.password)
-      .then((userCredential) => {
-        // Signed in successfully
-        userStore.setUser(userCredential);
-        router.push("/account");
-        accountCreatedSuccess.value = true;
-      })
-      .catch((error) => {
-        accountCreatedError.value = true;
-        console.log("Err Code: " + error.code + " msg: " + error.message);
-      });
-}
-
 const submitRegistration = () => {
   if(validate()) {
-    register();
+    registerUser(registration.email, registration.password.password, registration.username, registration.klas).then((user) => {
+          router.push("/account");
+          userStore.setUser(user);
+          accountCreatedSuccess.value = true;
+        }).catch((error) => {
+      console.log(error);
+      accountCreatedError.value = true;
+    });
     //clear form
     registration.username = "";
     registration.email = "";

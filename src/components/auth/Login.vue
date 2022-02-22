@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import {Ref, ref} from "vue";
-import {getAuth, signInWithEmailAndPassword} from "firebase/auth";
 import router from "../../router";
 import {useUserStore} from "../../stores/user.ts";
+import logUserIn from "../../functions/firebase/loginUser";
 
 const email: Ref<string> = ref("");
 const password: Ref<string> = ref("");
@@ -13,17 +13,16 @@ const userStore = useUserStore();
 const login = () => {
   isError.value = false;
   if (email.value && password.value.length >= 6) {
-    const auth = getAuth();
-    signInWithEmailAndPassword(auth, email.value, password.value)
-        .then((userCredential) => {
-          userStore.setUser(userCredential);
-          router.push("/account");
-        })
-        .catch((error) => {
-          if(error.code === "auth/user-not-found") errorMessage.value = "Deze gebruiker bestaat niet, \n maak een account aan.";
-          if(error.code === "auth/wrong-password") errorMessage.value = "Combinatie email/wachtwoord is onjuist.";
-          isError.value = true;
-        });
+
+    logUserIn(email.value, password.value).then((user) => {
+      userStore.setUser(user);
+      router.push("/account");
+    }).catch((error) => {
+      if(error.code === "auth/user-not-found") errorMessage = "Deze gebruiker bestaat niet, \n maak een account aan.";
+      if(error.code === "auth/wrong-password") errorMessage = "Combinatie email/wachtwoord is onjuist.";
+      isError.value = true;
+    });
+
   } else {
     errorMessage.value = "Vul een geldig emailadres en wachtwoord in.";
     isError.value = true;
