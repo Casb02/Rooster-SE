@@ -1,11 +1,12 @@
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-``
+import { getAuth, signInWithEmailAndPassword, setPersistence, browserLocalPersistence } from "firebase/auth";
+
 export default function logUserIn(
     email: string,
     password: string): Promise<any> {
     return new Promise<any>(
-        (resolve, reject) => {
+        async (resolve, reject) => {
             const auth = getAuth();
+            await setPersistence(auth, browserLocalPersistence);
             signInWithEmailAndPassword(auth, email, password)
                 .then(
                     (user) => {

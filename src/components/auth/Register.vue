@@ -62,7 +62,7 @@ const validate = () => {
   errorMsg.email.show = !registration.email.match(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[\d{1,3}\.\d{{1,3}\.\d{{1,3}\.\d{{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
   errorMsg.klas.show = registration.klas === "";
   errorMsg.checkbox.show = !registration.checkbox;
-  let hasError = errorMsg.username.show || errorMsg.email.show || errorMsg.password.password.show || errorMsg.password.passwordConfirm.show || errorMsg.klas.show;
+  let hasError = errorMsg.username.show || errorMsg.email.show || errorMsg.password.password.show || errorMsg.password.passwordConfirm.show || errorMsg.klas.show || errorMsg.checkbox.show;
   return !hasError;
 }
 

@@ -18,8 +18,8 @@ const login = () => {
       userStore.setUser(user);
       router.push("/account");
     }).catch((error) => {
-      if(error.code === "auth/user-not-found") errorMessage = "Deze gebruiker bestaat niet, \n maak een account aan.";
-      if(error.code === "auth/wrong-password") errorMessage = "Combinatie email/wachtwoord is onjuist.";
+      if(error.code === "auth/user-not-found") errorMessage.value = "Deze gebruiker bestaat niet, \n maak een account aan.";
+      if(error.code === "auth/wrong-password") errorMessage.value = "Combinatie email/wachtwoord is onjuist.";
       isError.value = true;
     });
 
