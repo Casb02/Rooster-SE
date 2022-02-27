@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import {defineProps, ref} from "vue";
 import {useUserStore} from "../../stores/user";
 defineProps({
   brandName: {

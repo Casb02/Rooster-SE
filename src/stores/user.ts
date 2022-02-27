@@ -1,7 +1,9 @@
 import { defineStore } from 'pinia';
+import { getAuth, signOut } from "firebase/auth";
 
 const authUser = Object.keys(window.localStorage)
     .filter(item => item.startsWith('firebase:authUser'))[0]
+
 
 
 export const useUserStore = defineStore('user', {
@@ -26,9 +28,18 @@ export const useUserStore = defineStore('user', {
 
         },
         logout(state) {
+            const auth = getAuth();
             this.user = null;
             this.isLoggedIn = false;
+            this.verified = false;
             this.email = '';
+            this.name = '';
+            this.klas = '';
+            signOut(auth).then(() => {
+                console.log('logged out');
+            }).catch(err => {
+                console.log(err);
+            });
         },
     },
 });

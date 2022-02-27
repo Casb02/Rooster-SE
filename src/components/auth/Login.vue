@@ -1,16 +1,21 @@
 <script setup lang="ts">
 import {Ref, ref} from "vue";
+import LoadingSpinner from "../ui/elements/LoadingSpinner.vue";
 import router from "../../router";
-import {useUserStore} from "../../stores/user.ts";
+import {useUserStore} from "../../stores/user";
 import logUserIn from "../../functions/firebase/loginUser";
+
 
 const email: Ref<string> = ref("");
 const password: Ref<string> = ref("");
 const isError: Ref<boolean> = ref(false);
 const errorMessage: Ref<string> = ref("");
 const userStore = useUserStore();
+const isLoading: Ref<boolean> = ref(false);
+
 
 const login = () => {
+  isLoading.value = true;
   isError.value = false;
   if (email.value && password.value.length >= 6) {
 
@@ -21,6 +26,8 @@ const login = () => {
       if(error.code === "auth/user-not-found") errorMessage.value = "Deze gebruiker bestaat niet, \n maak een account aan.";
       if(error.code === "auth/wrong-password") errorMessage.value = "Combinatie email/wachtwoord is onjuist.";
       isError.value = true;
+    }).finally(() => {
+      isLoading.value = false;
     });
 
   } else {
@@ -36,6 +43,7 @@ const login = () => {
     <div class="alert alert-danger text-center" v-show="isError">
       {{errorMessage}}
     </div>
+    <loading-spinner :v-if="isLoading"/>
     <div class="card">
       <h4 class="card-header">Inloggen</h4>
       <div class="card-body">
