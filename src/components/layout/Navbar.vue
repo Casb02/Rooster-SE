@@ -1,6 +1,8 @@
 <script setup lang="ts">
-import {defineProps, ref} from "vue";
-import {useUserStore} from "../../stores/user";
+import router from "../../router";
+import logUserOut from "../../functions/firebase/logUserOut";
+import {useUserStore} from "../../store/userStore";
+
 defineProps({
   brandName: {
     type: String,
@@ -9,6 +11,11 @@ defineProps({
 })
 
 const userStore = useUserStore();
+
+const logout = () => {
+  logUserOut();
+  router.push("/");
+}
 
 </script>
 
@@ -25,7 +32,7 @@ const userStore = useUserStore();
         </ul>
         <ul class="navbar-nav ms-lg-auto">
           <router-link to="/login" class="btn btn-primary ms-auto" v-show="!userStore.isLoggedIn">Login</router-link>
-          <span class="nav-link btn btn-link" @click="userStore.logout()" v-show="userStore.isLoggedIn">Logout</span>
+          <span class="nav-link btn btn-link" @click="logout()" v-show="userStore.isLoggedIn">Logout</span>
         </ul>
       </div>
     </div>

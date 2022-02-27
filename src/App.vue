@@ -2,11 +2,12 @@
 import Navbar from "./components/layout/Navbar.vue";
 import Footer from "./components/layout/Footer.vue";
 import NavLink from "./components/ui/navigation/NavLink.vue";
-import {Ref, ref} from "vue";
-import {useUserStore} from "./stores/user";
+import { Ref, ref } from "vue";
+import { useUserStore } from "./store/userStore";
 
 let hideDev: Ref<boolean> = ref(false);
-let userStore = useUserStore();
+
+const userStore = useUserStore();
 
 </script>
 
@@ -44,7 +45,6 @@ let userStore = useUserStore();
   justify-content: center;
   align-items: center;
   z-index: 100;
-  width: 100%;
   height: 50px;
   margin-bottom: -15px;
 }
@@ -73,6 +73,4 @@ let userStore = useUserStore();
 .footer {
   margin-top: auto;
 }
-
-
 </style>

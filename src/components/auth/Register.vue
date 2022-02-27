@@ -1,16 +1,16 @@
 <script setup lang="ts">
 import {reactive, Ref, ref} from "vue";
 import router from "../../router";
-import {useUserStore} from "../../stores/user";
 import registerUser from "../../functions/firebase/registerUser";
+import LoadingSpinner from "../ui/elements/LoadingSpinner.vue";
 
 //Class list from API
 let classList: Ref<Array<string>> = ref(["EHI1v.SA", "EHI1v.SB", "EHI1v.SC","EHI1v.SD","EHI1v.IA","EHI1v.IB","EHI1v.BA"]);
 
 let accountCreatedSuccess: Ref<boolean> = ref(false);
 let accountCreatedError: Ref<boolean> = ref(false);
+let isLoading: Ref<boolean> = ref(false);
 
-const userStore = useUserStore();
 
 //User inputs
 const registration = reactive({
@@ -67,15 +67,17 @@ const validate = () => {
 }
 
 const submitRegistration = () => {
+  isLoading.value = true;
   if(validate()) {
-    registerUser(registration.email, registration.password.password, registration.username, registration.klas).then((user) => {
-          router.push("/account");
-          userStore.setUser(user);
-          accountCreatedSuccess.value = true;
-        }).catch((error) => {
+    registerUser(registration.email, registration.password.password, registration.username, registration.klas).then(() => {
+      router.push("/account");
+      accountCreatedSuccess.value = true;
+    }).catch((error) => {
       console.log(error);
       accountCreatedError.value = true;
-    });
+    }).finally(() => {
+      isLoading.value = false;
+    })
     //clear form
     registration.username = "";
     registration.email = "";
@@ -93,6 +95,18 @@ const submitRegistration = () => {
   </div>
   <div class="alert alert-danger" v-show="accountCreatedError">
     Er is een fout opgetreden. Mogelijk bestaat dit account al.
+  </div>
+  <div class="alert alert-warning">
+    <span>
+      <strong>Let op!</strong>
+    </span>
+    <p>
+      Alle acounts worden verwijderd, dit is een test applicatie.
+      Gebruik geen wachtwoorden die je elders gebruikt. Desondanks, wachtwoorden worden encrypt op firebase.
+    </p>
+  </div>
+  <div v-show="isLoading">
+    <loading-spinner/>
   </div>
   <div class="card">
     <h4 class="card-header">Registreer</h4>
