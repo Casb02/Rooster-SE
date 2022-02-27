@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed } from "vue";
-import {useUserStore} from "../../../stores/user";
+import {getAuth} from "firebase/auth";
 const props = defineProps({
   disabled: {
     type: Boolean,
@@ -17,10 +17,8 @@ const props = defineProps({
   },
 })
 
-const userStore = useUserStore();
-
 const showLoginOnly = computed(() => {
-  return !(props.loginOnly && !userStore.isLoggedIn);
+  return getAuth().currentUser !== null;
 });
 
 </script>
