@@ -3,8 +3,14 @@
 @import "variables";
 
 .navbar {
-
   .navbar-nav {
-
+    .nav-item {
+      .nav-link {
+        letter-spacing: .02rem;
+        &.router-link-exact-active {
+          font-weight: bold;
+        }
+      }
+    }
   }
 }

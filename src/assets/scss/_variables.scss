@@ -52,6 +52,10 @@ $theme-colors: (
 $link-color: $brand-2;
 $link-hover-color: darken($brand-2, 10%);
 
+//navbar shit
+$navbar-light-color: $brand-2;
+$navbar-light-active-color: lighten($brand-2, 8%);
+
 //Custom card style
 $card-border-color: transparent;
 $card-border-radius: 0;
