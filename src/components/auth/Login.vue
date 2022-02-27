@@ -65,10 +65,10 @@ const testSignIn = () => {
     <div class="card">
       <h4 class="card-header">Inloggen</h4>
       <div class="card-body">
-        <div class="w-100 d-flex justify-content-center align-items-center flex-column">
-          <button class="btn btn-lg btn-white" disabled><span class="d-inline"><img src="src/assets/img/icons/github-brands.svg" alt="logo" height="26"/> Login met GitHub</span></button>
-          <span class="tz-small">Comming soon</span>
-        </div>
+<!--        <div class="w-100 d-flex justify-content-center align-items-center flex-column">-->
+<!--          <button class="btn btn-lg btn-white" disabled><span class="d-inline"><img src="src/assets/img/icons/github-brands.svg" alt="logo" height="26"/> Login met GitHub</span></button>-->
+<!--          <span class="tz-small">Comming soon</span>-->
+<!--        </div>-->
         <hr />
         <form @submit.prevent="login" @keydown.enter="login">
           <div class="mb-3">
