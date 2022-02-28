@@ -1,6 +1,7 @@
 import {getAuth, createUserWithEmailAndPassword} from "firebase/auth";
 import { doc, setDoc, getFirestore } from "firebase/firestore";
 
+
 export default function registerUser(
     email: string,
     password: string,
