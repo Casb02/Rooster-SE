@@ -1,6 +1,5 @@
 <script setup lang="ts">
-import { computed } from "vue";
-import {getAuth} from "firebase/auth";
+import {useUserStore} from "../../../store/userStore";
 const props = defineProps({
   disabled: {
     type: Boolean,
@@ -17,14 +16,12 @@ const props = defineProps({
   },
 })
 
-const showLoginOnly = computed(() => {
-  return getAuth().currentUser !== null;
-});
+const userStore = useUserStore();
 
 </script>
 
 <template>
-  <router-link class="nav-link" :disabled="disabled" href="#" :to="to" v-show="showLoginOnly">
+  <router-link class="nav-link" :disabled="disabled" href="#" :to="to" v-show="!loginOnly || userStore.isLoggedIn">
     <slot/>
   </router-link>
 </template>
