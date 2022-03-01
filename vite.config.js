@@ -10,13 +10,6 @@ export default defineConfig({
     define: {
         'process.env': {},
     },
-    server: {
-        cors: {
-            origin: '*',
-            allowMethods: 'GET,HEAD,PUT,POST,DELETE,PATCH',
-            allowHeaders: '*',
-        },
-    },
     plugins: [
         vue()
     ],

@@ -1,3 +1,5 @@
+@import "variables";
+
 .fc {
   .fc-button-primary {
 
@@ -13,10 +15,10 @@
   }
 
   .fc-day-today {
-    background-color: #E0E7FF !important;
+    background-color: lighten($brand-4, 5%) !important;
   }
   .fc-col-header-cell.fc-day-today {
-    background-color: #A5B4FC !important;
+    background-color: $brand-4 !important;
     color: #000 !important;
   }
 }

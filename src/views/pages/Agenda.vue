@@ -4,9 +4,9 @@ import Calendar from '../../components/ui/calendar/Calendar.vue'
 </script>
 
 <template>
-  <div class="container mx-auto">
+  <div class="mx-5">
     <h1>Kalender</h1>
-    <Calendar></Calendar>
+    <Calendar initial-view="timeGridWeek"/>
   </div>
 
 </template>
