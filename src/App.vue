@@ -20,8 +20,8 @@ const userStore = useUserStore();
       </div>
       <Navbar brand-name="RoosterSE">
         <nav-link to="/">Home</nav-link>
-        <nav-link to="/agenda">Agenda</nav-link>
         <nav-link to="/account" login-only="true">Account</nav-link>
+        <nav-link to="/agenda" login-only="true">Agenda</nav-link>
       </Navbar>
         <router-view class="site-view"/>
 
