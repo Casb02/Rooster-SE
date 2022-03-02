@@ -5,6 +5,7 @@ export const useUserStore = defineStore('user', {
     state: () => {
         return {
             isLoggedIn: false,
+            isVerified: false,
             user: null,
             username: null,
             klas: null,
@@ -14,6 +15,7 @@ export const useUserStore = defineStore('user', {
         async setUser(user) {
             this.user = user;
             this.isLoggedIn = !!user;
+            this.isVerified = !!user && user.emailVerified;
             const docRef = doc(getFirestore(), "usersCollection", user.uid);
             const dataSnapshot = await getDoc(docRef);
             if (dataSnapshot.exists) {

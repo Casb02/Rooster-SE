@@ -7,6 +7,7 @@ import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import {browserLocalPersistence, getAuth, onAuthStateChanged, setPersistence} from "firebase/auth";
 import {useUserStore} from "./store/userStore";
+import Toaster from '@meforma/vue-toaster';
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
@@ -35,6 +36,7 @@ const auth = getAuth();
 const app = createApp(App);
 app.use(createPinia());
 app.use(router);
+app.use(Toaster);
 app.mount('#app');
 
 const userStore = useUserStore();

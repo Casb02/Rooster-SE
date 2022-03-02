@@ -3,7 +3,8 @@ import '@fullcalendar/core/vdom'; // solves problem with Vite
 import FullCalendar from '@fullcalendar/vue3';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import dayGridPlugin from '@fullcalendar/daygrid';
-import iCalendarPlugin from '@fullcalendar/icalendar'
+import iCalendarPlugin from '@fullcalendar/icalendar';
+import listPlugin from '@fullcalendar/list';
 import nlLocale from '@fullcalendar/core/locales/nl';
 import {reactive, Ref, ref} from "vue";
 
@@ -25,7 +26,7 @@ const props = defineProps({
 let showWarning: Ref<boolean> = ref(true);
 
 const calendarOptions = reactive({
-  plugins: [ timeGridPlugin, dayGridPlugin, iCalendarPlugin ],
+  plugins: [ timeGridPlugin, dayGridPlugin, iCalendarPlugin, listPlugin ],
   initialView: props.initialView,
   locale: nlLocale,
   height: 'auto',

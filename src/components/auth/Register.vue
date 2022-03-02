@@ -2,6 +2,7 @@
 import {reactive, Ref, ref} from "vue";
 import router from "../../router";
 import registerUser from "../../functions/firebase/registerUser";
+import sendVerifyMail from "../../functions/firebase/sendVerifyMail";
 import LoadingSpinner from "../ui/elements/LoadingSpinner.vue";
 
 //Class list from API
@@ -71,6 +72,7 @@ const submitRegistration = () => {
   if(validate()) {
     registerUser(registration.email, registration.password.password, registration.username, registration.klas).then(() => {
       router.push("/account");
+      sendVerifyMail()
       accountCreatedSuccess.value = true;
     }).catch((error) => {
       console.log(error);

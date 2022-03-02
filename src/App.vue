@@ -2,12 +2,23 @@
 import Navbar from "./components/layout/Navbar.vue";
 import Footer from "./components/layout/Footer.vue";
 import NavLink from "./components/ui/navigation/NavLink.vue";
-import { Ref, ref } from "vue";
+import {getCurrentInstance, Ref, ref } from "vue";
 import { useUserStore } from "./store/userStore";
-
-let hideDev: Ref<boolean> = ref(false);
-
+import sendVerifyMail from "./functions/firebase/sendVerifyMail";
 const userStore = useUserStore();
+let hideDev: Ref<boolean> = ref(false);
+let verifyWarn: Ref<boolean> = ref(true);
+
+const resendMail = () => {
+  sendVerifyMail();
+  setTimeout(() => {
+    verifyWarn.value = false;
+  }, 3000);
+}
+
+const createToast = () => {
+  console.log(getCurrentInstance());
+}
 
 </script>
 
@@ -23,6 +34,11 @@ const userStore = useUserStore();
         <nav-link to="/account" login-only="true">Account</nav-link>
         <nav-link to="/agenda" login-only="true">Agenda</nav-link>
       </Navbar>
+        <div class="alert alert-info alert-dismissible text-center mx-2 mt-1" v-show="!userStore.isVerified && userStore.isLoggedIn && verifyWarn">
+          <strong>Let op!</strong> Je email is nog niet geverifieerd! klik <a class="text-decoration-underline link-brand-2" @click="resendMail">hier</a> om een nieuwe bevestigingsmail te sturen!
+          <button type="button" class="btn-close" @click="verifyWarn = false"/>
+        </div>
+      <button @click="createToast()"></button>
         <router-view class="site-view"/>
 
     </div>
