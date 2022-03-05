@@ -20,7 +20,7 @@ const registration = reactive({
     password: "",
     passwordConfirm: ""
   },
-  klas: "",
+  klas: "EHI1v.SC",
   checkbox: false
 })
 
@@ -142,7 +142,7 @@ const submitRegistration = () => {
             </div>
             <div class="mb-3">
               <label for="input-klas" class="form-label">Klas</label>
-              <select class="form-control form-select" id="input-klas" v-model="registration.klas">
+              <select class="form-control form-select" id="input-klas" v-model="registration.klas" disabled>
                 <option v-for="klas in classList" :value="klas">{{klas}}</option>
               </select>
               <div class="error" v-show="errorMsg.klas.show">{{ errorMsg.klas.message }}</div>
